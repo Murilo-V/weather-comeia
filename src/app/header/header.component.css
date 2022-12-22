@@ -9,3 +9,15 @@ h1 {
     color: #FFBE2C;
     font-size: 14pt;
 }
+
+small {
+  color: #ffffff;
+  font-size: 10pt;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+a {
+  color: #FFBE2C;
+  text-decoration: underline;
+}
