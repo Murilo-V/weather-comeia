@@ -4,10 +4,14 @@
     <mat-grid-tile *ngFor="let weather of weathers">
       <mat-card class="example-card">
         <mat-card-header>
-          <mat-card-title>{{ weather.city }}</mat-card-title>
+          <mat-card-title
+            >{{ weather.name }}, {{ weather.sys.country }}</mat-card-title
+          >
         </mat-card-header>
         <mat-card-content>
-          <p>{{ weather.temp }}</p>
+          <p>Atual: {{ weather.main.temp }}ºC</p>
+          <p>Máxima: {{ weather.main.temp_max }}ºC</p>
+          <p>Mínima: {{ weather.main.temp_min }}ºC</p>
         </mat-card-content>
         <mat-card-actions
           style="display: flex; justify-content: flex-end; align-items: center"
@@ -15,7 +19,7 @@
           <button
             mat-flat-button
             color="warn"
-            (click)="removeCity(weather.city)"
+            (click)="removeCity(weather.name)"
           >
             REMOVER
           </button>
@@ -23,9 +27,9 @@
       </mat-card>
     </mat-grid-tile>
     <mat-grid-tile>
-      <div class="select">
+      <div class="container">
         <mat-form-field appearance="fill" style="min-width: 24rem">
-          <mat-label>Digite uma cidade ou país</mat-label>
+          <mat-label>Digite uma localização</mat-label>
           <input
             matInput
             #inputCity
@@ -37,14 +41,11 @@
           mat-fab
           extended
           (click)="addCity(inputCity.value)"
-          style="
-            background-color: rgb(57, 12, 79);
-            color: #ffbe2c;
-            border: 2px solid #ffbe2c;
-          "
+          class="add-button"
+          [disabled]="inputCity.value.length === 0"
         >
           <mat-icon>add</mat-icon>
-          ADICIONAR CIDADE
+          ADICIONAR LOCAL
         </button>
       </div>
     </mat-grid-tile>

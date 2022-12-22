@@ -3,9 +3,21 @@
    background-color: #FFBE2C;
   }
 
-.select {
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.add-button {
+  background-color: rgb(57, 12, 79);
+  color: #ffbe2c;
+  border: 2px solid #ffbe2c;
+}
+
+.add-button:disabled {
+filter: grayscale(100%);
+opacity: 80%;
+cursor: not-allowed;
 }
