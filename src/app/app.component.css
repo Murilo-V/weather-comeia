@@ -2,3 +2,10 @@
    min-width: 24rem;
    background-color: #FFBE2C;
   }
+
+.select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

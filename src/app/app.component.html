@@ -1,23 +1,50 @@
 <app-header></app-header>
 <div style="margin-top: 5rem">
   <mat-grid-list [cols]="gridColsBreakpoint" rowHeight="4:1">
-    <mat-grid-tile *ngFor="let info of data">
+    <mat-grid-tile *ngFor="let weather of weathers">
       <mat-card class="example-card">
         <mat-card-header>
-          <mat-card-title>{{ info.city }}</mat-card-title>
+          <mat-card-title>{{ weather.city }}</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <p>{{ info.temp }}</p>
+          <p>{{ weather.temp }}</p>
         </mat-card-content>
         <mat-card-actions
           style="display: flex; justify-content: flex-end; align-items: center"
         >
-          <button mat-flat-button color="warn">REMOVER</button>
+          <button
+            mat-flat-button
+            color="warn"
+            (click)="removeCity(weather.city)"
+          >
+            REMOVER
+          </button>
         </mat-card-actions>
       </mat-card>
     </mat-grid-tile>
     <mat-grid-tile>
-      <button mat-button>REMOVER</button>
+      <div class="select">
+        <mat-form-field appearance="fill" style="min-width: 24rem">
+          <mat-label>Selecione uma cidade</mat-label>
+          <mat-select [(value)]="selectedCity" name="city">
+            <mat-option *ngFor="let city of cities" [value]="city.value">
+              {{ city.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button
+          mat-fab
+          extended
+          style="
+            background-color: rgb(57, 12, 79);
+            color: #ffbe2c;
+            border: 2px solid #ffbe2c;
+          "
+        >
+          <mat-icon>add</mat-icon>
+          ADICIONAR CIDADE
+        </button>
+      </div>
     </mat-grid-tile>
   </mat-grid-list>
 </div>

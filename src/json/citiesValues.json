@@ -1,0 +1,13 @@
+{
+  "data": [
+    { "value": "londres", "viewValue": "Londres" },
+    { "viewValue": "São Paulo", "value": "sp" },
+    { "viewValue": "Buenos Aires", "value": "baires" },
+    { "viewValue": "Tokyo", "value": "tokyo" },
+    { "viewValue": "Salvador", "value": "salvador" },
+    { "value": "rio", "viewValue": "Rio de Janeiro" },
+    { "value": "bh", "viewValue": "Belo Horizonte" },
+    { "value": "paris", "viewValue": "Paris" },
+    { "value": "ny", "viewValue": "Nova York" }
+  ]
+}
