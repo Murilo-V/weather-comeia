@@ -13,13 +13,7 @@ interface Citie {
 export class AppComponent {
   gridColsBreakpoint: number = 2;
   gridRowsBreakpoint: string = '4:1';
-  selectedCity = 'salvador';
-  cities: Citie[] = [
-    { value: 'rio', viewValue: 'Rio de Janeiro' },
-    { value: 'bh', viewValue: 'Belo Horizonte' },
-    { value: 'paris', viewValue: 'Paris' },
-    { value: 'ny', viewValue: 'Nova York' },
-  ];
+  selectedCity = 'rio';
   weathers = [
     {
       city: 'Londres',
@@ -48,8 +42,11 @@ export class AppComponent {
     this.gridRowsBreakpoint = window.innerWidth <= 600 ? '2:1' : '4:1';
   }
 
+  addCity(city: string) {
+    console.log(city);
+  }
+
   removeCity(city: string) {
     this.weathers = this.weathers.filter((w) => w.city !== city);
-    // this.cities.push({ value: '' });
   }
 }

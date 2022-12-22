@@ -25,16 +25,18 @@
     <mat-grid-tile>
       <div class="select">
         <mat-form-field appearance="fill" style="min-width: 24rem">
-          <mat-label>Selecione uma cidade</mat-label>
-          <mat-select [(value)]="selectedCity" name="city">
-            <mat-option *ngFor="let city of cities" [value]="city.value">
-              {{ city.viewValue }}
-            </mat-option>
-          </mat-select>
+          <mat-label>Digite uma cidade ou país</mat-label>
+          <input
+            matInput
+            #inputCity
+            maxlength="256"
+            placeholder="Rio de Janeiro"
+          />
         </mat-form-field>
         <button
           mat-fab
           extended
+          (click)="addCity(inputCity.value)"
           style="
             background-color: rgb(57, 12, 79);
             color: #ffbe2c;
