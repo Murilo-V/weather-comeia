@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { OpenWeatherApiService } from './open-weather-api.service';
 
 interface Citie {
   value: string;
@@ -37,13 +38,15 @@ export class AppComponent {
     },
   ];
 
+  constructor(private openWeatherApiService: OpenWeatherApiService) {}
+
   ngOnInit() {
     this.gridColsBreakpoint = window.innerWidth <= 600 ? 1 : 2;
     this.gridRowsBreakpoint = window.innerWidth <= 600 ? '2:1' : '4:1';
   }
 
   addCity(city: string) {
-    console.log(city);
+    this.openWeatherApiService.getWeatherInfos();
   }
 
   removeCity(city: string) {
